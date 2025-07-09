@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= game.title %>
+    </title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden !important;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: "";
+            background-image: url('<%= game?.logo %>');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        h1 {
+            color: #955151;
+            font-size: 3rem;
+            line-height: 0.9;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .button {
+            padding: 10px 30px;
+            background-color: #f54061;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            font-size: 1.5rem;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #f78ea2;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="hero">
+        <h1>
+            <%= game.title %>
+        </h1>
+        <a id="playButton" onclick="showI('<%= game?.game_url %>')" class="button">Play</a>
+    </div>
+
+    <script>
+        window.adsbygoogle = window.adsbygoogle || [];
+        var adBreak = adConfig = function (o) {
+            adsbygoogle.push(o);
+        }
+        adConfig({
+            preloadAdBreaks: 'on',
+            sound: 'on',
+            onReady: () => { reloadAds(); show(); },
+        });
+
+
+        function show(hreflink = '') {
+            let didRedirect = false;
+            function safeRedirect() {
+                if (!didRedirect) {
+                    didRedirect = true;
+                    location.href = hreflink;
+                }
+            }
+            const fallbackTimeout = setTimeout(() => {
+                safeRedirect();
+            }, 1000);
+            if (typeof adBreak === 'function') {
+                try {
+                    adBreak({
+                        type: 'reward',
+                        name: 'game_started',
+                        beforeReward: (showAdFn) => { },
+                        adViewed: () => { },
+                        adDismissed: () => {
+                            clearTimeout(fallbackTimeout);
+                            safeRedirect();
+                        },
+                        adBreakDone: (placementInfo) => {
+                            clearTimeout(fallbackTimeout);
+                            safeRedirect();
+                        }
+                    });
+                } catch (err) {
+                    console.error("Reward adBreak error:", err);
+                    clearTimeout(fallbackTimeout);
+                    safeRedirect();
+                }
+            } else {
+                console.warn("adBreak not ready for reward ad.");
+                clearTimeout(fallbackTimeout);
+                safeRedirect();
+            }
+        }
+
+
+        function showI(hreflink = '') {
+            let didRedirect = false;
+            function safeRedirect() {
+                if (!didRedirect) {
+                    didRedirect = true;
+                    location.href = hreflink;
+                }
+            }
+            const fallbackTimeout = setTimeout(() => {
+                safeRedirect();
+            }, 1000);
+            if (typeof adBreak === 'function') {
+                try {
+                    adBreak({
+                        type: 'start',
+                        name: 'game_started',
+                        adBreakDone: (placementInfo) => {
+                            console.log("AdBreak done");
+                            clearTimeout(fallbackTimeout);
+                            safeRedirect();
+                        },
+                        adDismissed: () => {
+                            console.log("Ad was dismissed");
+                            clearTimeout(fallbackTimeout);
+                            safeRedirect();
+                        },
+                        beforeAd: () => {
+                            console.log("Ad is about to show");
+                        }
+                    });
+                } catch (err) {
+                    console.error("adBreak error:", err);
+                    clearTimeout(fallbackTimeout);
+                    safeRedirect();
+                }
+            } else {
+                console.warn("adBreak is not available");
+                clearTimeout(fallbackTimeout);
+                safeRedirect();
+            }
+        }
+    </script>
+</body>
+
+</html>

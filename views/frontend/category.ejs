@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partial/head") %>
+</head>
+
+<body class="bg-gray-100 cursor-default">
+    <%- include("./partial/sidebar",{sidebarCategories:sidebarCategories}) %>
+
+        <!-- Main Content -->
+        <div class="p-4 sm:ml-64 bg-sky-600 min-h-screen">
+            <main class="flex-1 p-4">
+                <h1 class="text-center text-2xl font-bold mb-6 text-white"><i class="fa fa-tags"></i> Category: > <%=
+                        gameCategories.name %>
+                </h1>
+                <!-- Category Data -->
+                <div class="my-6">
+                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+                        <% gameCategories?.games?.forEach((game, gameIndex)=> { %>
+                            <a href="/game/<%= game.slug %>"
+                                class="relative bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col items-center group overflow-hidden">
+                                <img src="<%= game.logo %>" alt="<%= game.title %>"
+                                    class="rounded w-full h-40 object-cover" loading="lazy" />
+                                <span
+                                    class="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm font-bold text-white opacity-0 group-hover:opacity-100 transition text-lg text-center w-full">
+                                    <%= game.title %>
+                                </span>
+                            </a>
+                            <% }) %>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        </div>
+        <%- include("./partial/footer") %>
+</body>
+
+</html>

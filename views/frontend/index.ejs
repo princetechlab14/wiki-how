@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partial/head") %>
+</head>
+
+<body class="bg-gray-100 cursor-default">
+    <%- include("./partial/sidebar",{sidebarCategories:sidebarCategories}) %>
+
+        <!-- Main Content -->
+        <div class="p-4 sm:ml-64 bg-sky-600 min-h-screen">
+            <main class="flex-1 p-4">
+                <h1 class="text-center text-3xl font-bold mb-6 text-white">Mini-Gamer</h1>
+                <!-- Category Data -->
+                <% categories.forEach((category, index)=> { %>
+                    <div class="my-6">
+                        <div class="my-3 flex text-white font-bold">
+                            <h1 class="text-2xl">
+                                <%= category.name %>
+                            </h1>
+                            <a href="/category/<%= category.slug %>" class="text-xs ml-4 my-auto">More New Games</a>
+                        </div>
+                        <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+                            <% category?.games?.slice(0, 8).forEach((game, gameIndex)=> { %>
+                                <a href="/game/<%= game.slug %>"
+                                    class="relative bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col items-center group overflow-hidden">
+                                    <img src="<%= game.logo %>" alt="<%= game.title %>"
+                                        class="rounded w-full h-40 object-cover" loading="lazy" />
+                                    <span
+                                        class="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm font-bold text-white opacity-0 group-hover:opacity-100 transition text-lg text-center w-full">
+                                        <%= game.title %>
+                                    </span>
+                                </a>
+                                <% }) %>
+                        </div>
+                    </div>
+                    <% }) %>
+
+            </main>
+        </div>
+
+        </div>
+        <%- include("./partial/footer") %>
+</body>
+
+</html>

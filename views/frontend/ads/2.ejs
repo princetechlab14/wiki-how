@@ -1,0 +1,43 @@
+<div class="text-center mx-auto overflow-hidden my-3">
+    <center class="adsSec">
+        <div style="font-size:12px; color:black; margin-bottom:4px;">SPONSORED</div>
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4837965847348739"
+            crossorigin="anonymous"></script>
+        <!-- a2 -->
+        <ins id="adsSec" class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-4837965847348739"
+            data-ad-slot="2501854845" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+
+                const refreshAd = () => {
+                    const adSlot = document.getElementById('adsSec');
+                    if (adSlot) {
+                        adSlot.remove();
+                        const newAdSlot = document.createElement('ins');
+                        newAdSlot.className = 'adsbygoogle';
+                        newAdSlot.id = 'adsSec';
+                        newAdSlot.style.display = 'block';
+                        newAdSlot.setAttribute('data-ad-client', 'ca-pub-4837965847348739');
+                        newAdSlot.setAttribute('data-ad-slot', '2501854845');
+                        newAdSlot.setAttribute('data-ad-format', 'auto');
+                        newAdSlot.setAttribute('data-full-width-responsive', 'true');
+                        document.querySelector('.adsSec').appendChild(newAdSlot);
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
+                };
+
+                refreshAd();
+
+                setTimeout(() => {
+                    const adSlot = document.getElementById('adsSec');
+                    const notFilled = adSlot && adSlot.getAttribute('data-ad-status') !== 'filled';
+                    if (notFilled) {
+                        refreshAd();
+                    }
+                }, 6000);
+            });
+        </script>
+    </center>
+</div>

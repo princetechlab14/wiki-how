@@ -1,0 +1,81 @@
+<!-- <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
+<script>
+    window.googletag = window.googletag || { cmd: [] };
+
+    const RewardedAdManager = {
+        rewardedSlot: null,
+        adIsReady: false,
+
+        init: function () {
+            googletag.cmd.push(() => {
+                this.rewardedSlot = googletag.defineOutOfPageSlot(
+                    '/23299678841/web_rewarded',
+                    googletag.enums.OutOfPageFormat.REWARDED
+                );
+
+                if (this.rewardedSlot) {
+                    this.rewardedSlot.addService(googletag.pubads());
+
+                    googletag.pubads().addEventListener("rewardedSlotReady", (event) => {
+                        this.adIsReady = true;
+                        this.updateStatus("✅ Ad ready.");
+                        if (!this.autoShown) {
+                            this.autoShown = true;
+                            this.updateStatus("🎬 Auto-showing ad...");
+                            event.makeRewardedVisible();
+                        }
+                    });
+
+                    googletag.pubads().addEventListener("rewardedSlotGranted", (event) => {
+                        this.updateStatus(`🎉 Earned ${event.payload.amount} ${event.payload.type}`);
+                    });
+
+                    googletag.pubads().addEventListener("rewardedSlotClosed", () => {
+                        this.updateStatus("❌ Ad closed.");
+                    });
+
+                    googletag.pubads().addEventListener("slotRenderEnded", (event) => {
+                        if (event.slot === this.rewardedSlot && event.isEmpty) {
+                            this.updateStatus("⚠️ No ad filled.");
+                        }
+                    });
+
+                    googletag.enableServices();
+                    googletag.display(this.rewardedSlot);
+                    this.updateStatus("🔄 GPT initialized and ad requested.");
+                } else {
+                    this.updateStatus("❌ Rewarded slot not supported.");
+                }
+            });
+        },
+
+        showAd: function () {
+            if (this.adIsReady) {
+                this.updateStatus("▶️ Showing ad (manual)...");
+                googletag.pubads().refresh([this.rewardedSlot]);
+            } else {
+                this.updateStatus("⏳ Ad not ready yet.");
+            }
+        },
+
+        updateStatus: function (msg) {
+            // console.log("[REWARDED AD]", msg);
+        }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        RewardedAdManager.init();
+        const btn = document.querySelector(".show-rewarded");
+        if (btn) {
+            btn.addEventListener("click", () => {
+                RewardedAdManager.showAd();
+            });
+        }
+    });
+</script>
+
+<div id='div-gpt-ad-1749731682337-0'>
+    <script>
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1749731682337-0'); });
+    </script>
+</div> -->

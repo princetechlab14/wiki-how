@@ -1,0 +1,40 @@
+<!-- <div class="adsEight text-center mx-auto overflow-hidden my-3">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4837965847348739"
+        crossorigin="anonymous"></script>
+
+    <ins id="adsEight" class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-4837965847348739"
+        data-ad-slot="6193857346" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            const refreshAd = () => {
+                const adSlot = document.getElementById('adsEight');
+                if (adSlot) {
+                    adSlot.remove();
+                    const newAdSlot = document.createElement('ins');
+                    newAdSlot.className = 'adsbygoogle';
+                    newAdSlot.id = 'adsEight';
+                    newAdSlot.style.display = 'block';
+                    newAdSlot.setAttribute('data-ad-client', 'ca-pub-4837965847348739');
+                    newAdSlot.setAttribute('data-ad-slot', '6193857346');
+                    newAdSlot.setAttribute('data-ad-format', 'auto');
+                    newAdSlot.setAttribute('data-full-width-responsive', 'true');
+                    document.querySelector('.adsEight').appendChild(newAdSlot);
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+            };
+
+            const checkAndRefreshAd = () => {
+                const adSlot = document.getElementById('adsEight');
+                if (adSlot && adSlot.getAttribute('data-ad-status') !== 'filled') {
+                    refreshAd();
+                }
+            }
+            setInterval(checkAndRefreshAd, 6000);
+            setInterval(() => {
+                refreshAd();
+                setTimeout(checkAndRefreshAd, 5000);
+            }, 30000);
+        });
+    </script>
+</div> -->
