@@ -66,7 +66,7 @@ const synchronizeAndSeed = async () => {
     console.error("Error during synchronization and seeding:", error);
   }
 };
-synchronizeAndSeed();
+// synchronizeAndSeed();
 // Database end
 
 
