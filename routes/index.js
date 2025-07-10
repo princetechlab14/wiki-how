@@ -12,5 +12,6 @@ router.post('/contact-us', homeController.ContactUsStore);
 router.get('/game/:slug', homeController.Single);
 router.get('/play/:slug', homeController.PlayGame);
 router.get('/category/:slug', homeController.CategoryGames);
+router.get("/category/:slug/load-more", homeController.LoadMoreGames);
 
 module.exports = router;

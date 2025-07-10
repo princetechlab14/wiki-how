@@ -1,5 +1,21 @@
 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});"
-    class="fixed bottom-6 right-6 bg-white text-[#184d6d] rounded-full shadow-lg flex flex-col items-center px-2 py-2 border-2 border-[#184d6d] hover:bg-yellow-300 transition"
+    class="fixed bottom-20 right-6 bg-white text-[#184d6d] rounded-full shadow-lg flex flex-col items-center px-2 py-2 border-2 border-[#184d6d] hover:bg-yellow-300 transition"
     aria-label="Chat on WhatsApp">
     <i class="fa-solid fa-arrow-up text-xl px-1"></i>
 </button>
+<footer class="sm:ml-64 w-full shadow-md bg-sky-800 fixed bottom-0 z-50">
+    <div class="max-w-screen-xl mx-auto px-6 py-4">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <span class="text-sm text-white ">
+                &copy; <span id="currentYear"></span>
+                <a href="/" class="hover:underline font-medium">Mini Gamer</a>. All Rights Reserved.
+            </span>
+            <ul class="flex flex-wrap items-center gap-4 mt-3 md:mt-0 text-sm font-medium text-white">
+                <li><a href="/about" class="hover:text-gray-100">About</a></li>
+                <li><a href="/privacy-policy" class="hover:text-gray-100">Privacy Policy</a></li>
+                <li><a href="/term-use" class="hover:text-gray-100">Terms of Use</a></li>
+                <li><a href="/contact-us" class="hover:text-gray-100">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>

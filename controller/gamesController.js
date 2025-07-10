@@ -81,7 +81,6 @@ const update = async (req, res) => {
         if (!game) return res.status(404).send("Game not found");
         const categories = await CategoryModel.findAll({ where: { status: "Active" } });
         const { error, value } = gameSchema.validate(req.body);
-        console.log("game update req.body error => ", req.body);
         if (error) return res.render("games/edit", { title: "Games Edit", game, awsBaseUrl, error: error.details[0].message, categories });
 
         // Handle new image uploads

@@ -2,156 +2,85 @@
 <html lang="en">
 
 <head>
-    <%- include("./partial/head") %>
+    <%- include('./partial/head') %>
 </head>
 
-<body>
-    <%- include("./partial/navbar") %>
-    <%- include("./ads/1") %>
-        <div class="flex-grow xl:container mx-auto mb-12">
-            <section class="p-3 sm:p-5 md:p-8 min-h-screen">
-                <h1 class="text-xl text-bold font-medium my-4 capitalize">privacy policy</h1>
-                <div class="border shadow-xl p-3 rounded-lg">
-                    <div class="mb-5">
-                        <h3 class="my-1 text-xl font-bold">1. Introduction</h3>
-                        <p>
-                            Welcome to web gamer ("we," "us," or "our"). This Privacy Policy outlines how we
-                            collect, use, disclose, and protect your information when you access or use our website
-                            and services. By using web gamer, you agree to the terms outlined in this Privacy
-                            Policy.
-                        </p>
-                    </div>
+<body class="bg-gray-100 text-gray-800 cursor-default">
 
-                    <div class="my-5">
-                        <h3 class="my-1 text-xl font-bold">
-                            2. Information We Collect
-                        </h3>
-                        <p>a.<b>
-                                Personal Information:
-                            </b>
-                            When you create an account or use our services, we may collect personal information such
-                            as your name, email address, date of birth, and other information voluntarily provided.
-                        </p>
-                        <p>b.<b>
-                                Usage Data:
-                            </b>
-                            We may collect information about your interaction with the website, including your IP
-                            address, browser type, pages visited, and time spent on the site.
-                        </p>
-                        <p>c.<b>
-                                Cookies:
-                            </b>
-                            We use cookies and similar tracking technologies to enhance your user experience and
-                            collect data about how you use our website.
-                        </p>
-                    </div>
+    <%- include('./partial/sidebar', { sidebarCategories:sidebarCategories }) %>
 
-                    <div class="my-5">
-                        <h3 class="my-1 text-xl font-bold">
-                            3. How We Use Your Information
-                        </h3>
-                        <p>a.<b>
-                                Provide and Improve Services:
-                            </b>
-                            We use your information to provide and enhance our services, troubleshoot issues, and
-                            personalize your experience on the website.
-                        </p>
-                        <p>b.<b>
-                                Communication:
-                            </b>
-                            We may use your email address to send updates, newsletters, and promotional materials
-                            related to web gamer.
-                        </p>
-                        <p>c.<b>
-                                Analytics:
-                            </b>
-                            We use analytics tools to analyze user behavior and improve our website and services.
-                        </p>
-                    </div>
+        <main class="sm:ml-64 p-6 min-h-screen bg-sky-700 text-white">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl font-bold mb-6 border-b border-gray-300 pb-2 text-sky-300">Privacy Policy</h1>
 
-                    <div class="my-5">
-                        <h3 class="my-1 text-xl font-bold">
-                            4. Information Sharing and Disclosure
-                        </h3>
-                        <p>a.<b>
-                                Third-Party Service Providers:
-                            </b>
-                            We may share your information with third-party service providers that help us operate
-                            and improve our services.
-                        </p>
-                        <p>b.<b>
-                                Legal Compliance:
-                            </b>
-                            We may disclose your information in response to legal requests, court orders, or to
-                            comply with applicable laws.
-                        </p>
-                    </div>
+                <p class="mb-4">
+                    At <strong>Mini Gamer</strong>, we are committed to protecting your privacy and ensuring your online
+                    experience is safe and enjoyable.
+                    This Privacy Policy explains how we collect, use, and protect your personal information when you
+                    visit our website.
+                </p>
 
-                    <div class="my-5">
-                        <h3 class="my-1 text-xl font-bold">
-                            5. Data Security
-                        </h3>
-                        <p>
-                            We implement industry-standard security measures to protect your information. However,
-                            no method of transmission over the internet or electronic storage is 100% secure, and we
-                            cannot guarantee absolute security.
-                        </p>
-                    </div>
+                <h2 class="text-xl font-semibold mt-6 mb-2">1. Information We Collect</h2>
+                <p class="mb-4">We may collect the following types of information:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li>Non-personal information such as browser type, operating system, IP address, and game usage
+                        statistics.</li>
+                    <li>Optional contact information if you use our contact form (name, email address).</li>
+                    <li>Cookies and similar tracking technologies to enhance your experience and analytics.</li>
+                </ul>
 
-                    <div class="my-5">
-                        <h3 class="my-1 text-xl font-bold">
-                            6. Your Choices
-                        </h3>
-                        <p>a.<b>
-                                Account Information:
-                            </b>
-                            You can update or delete your account information by accessing your account settings.
-                        </p>
-                        <p>b.<b>
-                                Cookies:
-                            </b>
-                            Most browsers allow you to control cookies through their settings. However, disabling
-                            cookies may affect your experience on the website.
-                        </p>
-                    </div>
+                <h2 class="text-xl font-semibold mt-6 mb-2">2. How We Use Your Information</h2>
+                <p class="mb-4">We use the information we collect to:</p>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li>Improve game recommendations and site performance.</li>
+                    <li>Understand how users interact with our website.</li>
+                    <li>Respond to inquiries you send us via the contact form.</li>
+                </ul>
 
-                    <div class="my-5">
-                        <h3 class="my-1 text-xl font-bold">
-                            7. Children's Privacy
-                        </h3>
-                        <p>
-                            Our services are not intended for users under the age of 18. We do not knowingly collect
-                            personal information from children. If you believe a child has provided us with
-                            information, please contact us, and we will promptly delete it.
-                        </p>
-                    </div>
+                <h2 class="text-xl font-semibold mt-6 mb-2">3. Third-Party Services</h2>
+                <p class="mb-4">
+                    We may use third-party services such as analytics providers or ad networks that collect data in
+                    accordance with their own privacy policies.
+                    These services help us understand traffic patterns and deliver ads relevant to you.
+                </p>
 
-                    <div class="my-5">
-                        <h3 class="my-1 text-xl font-bold">
-                            8. Changes to this Privacy Policy
-                        </h3>
-                        <p>
-                            We may update this Privacy Policy periodically. The date of the latest revision will be
-                            indicated at the top of the page. Please review this Privacy Policy regularly for any
-                            changes.
-                        </p>
-                    </div>
+                <h2 class="text-xl font-semibold mt-6 mb-2">4. Cookies</h2>
+                <p class="mb-4">
+                    Cookies are small data files stored on your device. We use them to track gameplay stats, remember
+                    preferences, and enhance functionality.
+                    You can disable cookies through your browser settings.
+                </p>
 
-                    <div class="my-5">
-                        <h3 class="my-1 text-xl font-bold">
-                            9. Contact Us
-                        </h3>
-                        <p>
-                            If you have any questions or concerns about our Privacy Policy, please contact us at
-                            <a class="text-primary" href="mailto:gaminggalaxys.tech@gmail.com">
-                                gaminggalaxys.tech@gmail.com.
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <%- include("./partial/footer") %>
+                <h2 class="text-xl font-semibold mt-6 mb-2">5. Children’s Privacy</h2>
+                <p class="mb-4">
+                    Mini Gamer is intended for general audiences, including children under 13. We do not knowingly
+                    collect personally identifiable information from children.
+                    If you believe we have collected such data, please contact us immediately.
+                </p>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">6. Data Security</h2>
+                <p class="mb-4">
+                    We implement appropriate technical and organizational measures to protect your information from
+                    unauthorized access, disclosure, or loss.
+                </p>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">7. Changes to This Policy</h2>
+                <p class="mb-4">
+                    We may update this Privacy Policy from time to time. The most recent version will always be
+                    available on this page, and the date of the last update will be indicated below.
+                </p>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">8. Contact Us</h2>
+                <p class="mb-4">
+                    If you have questions or concerns about this Privacy Policy, please contact us via our <a
+                        href="/contact-us" class="text-blue-200 hover:underline">Contact</a> page.
+                </p>
+
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-10">Last Updated: July 10, 2025</p>
+            </div>
+        </main>
+
+        <%- include('./partial/footer') %>
 </body>
 
 </html>

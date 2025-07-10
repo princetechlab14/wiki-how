@@ -3,171 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= game.title %>
+        <%= game?.title %>
     </title>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden !important;
-        }
-
-        .hero {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero::before {
-            content: "";
-            background-image: url('<%= game?.logo %>');
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            opacity: 0.3;
-            z-index: -1;
-        }
-
-        h1 {
-            color: #955151;
-            font-size: 3rem;
-            line-height: 0.9;
-            opacity: 1;
-            z-index: 1;
-        }
-
-        .button {
-            padding: 10px 30px;
-            background-color: #f54061;
-            color: #fff;
-            text-decoration: none;
-            border: none;
-            font-size: 1.5rem;
-            border-radius: 25px;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #f78ea2;
-        }
-    </style>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="hero">
-        <h1>
-            <%= game.title %>
-        </h1>
-        <a id="playButton" onclick="showI('<%= game?.game_url %>')" class="button">Play</a>
-    </div>
-
-    <script>
-        window.adsbygoogle = window.adsbygoogle || [];
-        var adBreak = adConfig = function (o) {
-            adsbygoogle.push(o);
-        }
-        adConfig({
-            preloadAdBreaks: 'on',
-            sound: 'on',
-            onReady: () => { reloadAds(); show(); },
-        });
-
-
-        function show(hreflink = '') {
-            let didRedirect = false;
-            function safeRedirect() {
-                if (!didRedirect) {
-                    didRedirect = true;
-                    location.href = hreflink;
-                }
-            }
-            const fallbackTimeout = setTimeout(() => {
-                safeRedirect();
-            }, 1000);
-            if (typeof adBreak === 'function') {
-                try {
-                    adBreak({
-                        type: 'reward',
-                        name: 'game_started',
-                        beforeReward: (showAdFn) => { },
-                        adViewed: () => { },
-                        adDismissed: () => {
-                            clearTimeout(fallbackTimeout);
-                            safeRedirect();
-                        },
-                        adBreakDone: (placementInfo) => {
-                            clearTimeout(fallbackTimeout);
-                            safeRedirect();
-                        }
-                    });
-                } catch (err) {
-                    console.error("Reward adBreak error:", err);
-                    clearTimeout(fallbackTimeout);
-                    safeRedirect();
-                }
-            } else {
-                console.warn("adBreak not ready for reward ad.");
-                clearTimeout(fallbackTimeout);
-                safeRedirect();
-            }
-        }
-
-
-        function showI(hreflink = '') {
-            let didRedirect = false;
-            function safeRedirect() {
-                if (!didRedirect) {
-                    didRedirect = true;
-                    location.href = hreflink;
-                }
-            }
-            const fallbackTimeout = setTimeout(() => {
-                safeRedirect();
-            }, 1000);
-            if (typeof adBreak === 'function') {
-                try {
-                    adBreak({
-                        type: 'start',
-                        name: 'game_started',
-                        adBreakDone: (placementInfo) => {
-                            console.log("AdBreak done");
-                            clearTimeout(fallbackTimeout);
-                            safeRedirect();
-                        },
-                        adDismissed: () => {
-                            console.log("Ad was dismissed");
-                            clearTimeout(fallbackTimeout);
-                            safeRedirect();
-                        },
-                        beforeAd: () => {
-                            console.log("Ad is about to show");
-                        }
-                    });
-                } catch (err) {
-                    console.error("adBreak error:", err);
-                    clearTimeout(fallbackTimeout);
-                    safeRedirect();
-                }
-            } else {
-                console.warn("adBreak is not available");
-                clearTimeout(fallbackTimeout);
-                safeRedirect();
-            }
-        }
-    </script>
+<body class="bg-cyan-900 min-h-screen flex flex-col">
+    <main class="flex-1 flex overflow-hidden">
+        <!-- Center Banner -->
+        <section class="flex-1 flex flex-col items-center justify-center relative">
+            <!-- Banner Background -->
+            <div class="absolute inset-0">
+                <img src="<%= game?.logo %>" alt="Banner BG" class="w-full h-full object-cover opacity-10" />
+                <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+            </div>
+            <!-- Banner Content -->
+            <div class="relative flex flex-col items-center z-10">
+                <!-- Game Icon -->
+                <div
+                    class="rounded-full bg-yellow-200 shadow-xl flex items-center justify-center w-52 h-52 mb-8 border-4 border-white">
+                    <img src="<%= game?.logo %>" alt="<%= game.title %>" class="w-52 h-52 rounded-full shadow-xl" />
+                </div>
+                <!-- Play Now Button -->
+                <a href="<%= game?.game_url %>"
+                    class="bg-gradient-to-b from-green-400 to-green-600 text-white font-bold text-xl px-12 py-3 rounded shadow-lg border-2 border-white mb-8 hover:from-green-500 hover:to-green-700 transition">
+                    Play Now!
+                </a>
+                <!-- Game Title -->
+                <div class="bg-black bg-opacity-20 px-8 py-2 rounded text-white font-semibold text-2xl shadow">
+                    <%= game?.title %>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

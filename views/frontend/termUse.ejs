@@ -5,176 +5,82 @@
     <%- include("./partial/head") %>
 </head>
 
-<body>
-    <%- include("./partial/navbar") %>
-        <%- include("./ads/1") %>
-            <div class="flex-grow xl:container mx-auto mb-12">
-                <section class="p-3 sm:p-5 md:p-8 min-h-screen">
-                    <h1 class="text-2xl text-bold font-medium my-4 capitalize">term of use</h1>
-                    <div class="border shadow-xl p-3 rounded-lg">
-                        <div class="mb-5">
-                            <p class="mb-2">
-                                Welcome to web gamer!
-                            </p>
-                            <p>
-                                These Terms and Conditions govern your use of the web gamer website (the "Website") and
-                                all
-                                content,
-                                products, and services provided by web gamer (collectively referred to as the
-                                "Service"). By
-                                accessing or using the Service, you agree to be bound by these Terms and Conditions. If
-                                you
-                                disagree
-                                with any part of these terms, then you may not access the Service.
-                            </p>
-                        </div>
-                        <div class="my-5 my-md-4">
-                            <h3 class="my-1 text-xl font-bold">
-                                1. Intellectual Property
-                            </h3>
-                            <p>
-                                The Service and its original content, features, and functionality are owned by web gamer
-                                and
-                                are
-                                protected by international copyright, trademark, patent, trade secret, and other
-                                intellectual
-                                property or proprietary rights laws.
-                            </p>
-                        </div>
+<body class="bg-gray-100 cursor-default">
+    <%- include("./partial/sidebar",{sidebarCategories:sidebarCategories}) %>
+        <main class="sm:ml-64 p-6 min-h-screen bg-sky-700 text-white">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl font-bold mb-6 border-b border-gray-300 pb-2 text-sky-200">Terms of Use</h1>
 
-                        <div class="my-5 my-md-4">
-                            <h3 class="my-1 text-xl font-bold">
-                                2. User Accounts
-                            </h3>
-                            <p>
-                                To access certain features of the Service, you may be required to create an account. You
-                                agree
-                                to provide accurate, current, and complete information when creating or updating your
-                                account.
-                                You are responsible for maintaining the confidentiality of your account and password and
-                                for
-                                restricting access to your computer or device. You agree to accept responsibility for
-                                all
-                                activities that occur under your account or password.
-                            </p>
-                        </div>
+                <p class="mb-4">
+                    Welcome to <strong>Mini Gamer</strong>! By using our website, you agree to the following terms and
+                    conditions. Please read them carefully.
+                    If you do not agree to these terms, you should not access or use the website.
+                </p>
 
-                        <div class="my-5 my-md-4">
-                            <h3 class="my-1 text-xl font-bold">
-                                3. User Content
-                            </h3>
-                            <p>
-                                You retain ownership of any content you submit, post, or display on or through the
-                                Service
-                                ("User Content"). However, by submitting, posting, or displaying User Content, you grant
-                                web
-                                gamer a non-exclusive, royalty-free, worldwide, irrevocable, and sub-licensable license
-                                to
-                                use,
-                                reproduce, adapt, distribute, publish, publicly perform, publicly display, and otherwise
-                                exploit
-                                such User Content.
-                            </p>
-                        </div>
+                <h2 class="text-xl font-semibold mt-6 mb-2">1. Acceptance of Terms</h2>
+                <p class="mb-4">
+                    By accessing and using Mini Gamer, you accept and agree to be bound by the terms and provisions of
+                    this agreement.
+                    These terms apply to all visitors, users, and others who access or use the service.
+                </p>
 
-                        <div class="my-5 my-md-4">
-                            <h3 class="my-1 text-xl font-bold">
-                                4. Prohibited Conduct
-                            </h3>
-                            <p>
-                                You agree not to engage in any of the following prohibited activities:
-                            </p>
-                            <p>
-                                Use the Service for any illegal purpose or in violation of any local, state, national,
-                                or
-                                international law.
-                            </p>
-                            <p>
-                                Violate, or encourage others to violate, any right of a third party, including by
-                                infringing
-                                or
-                                misappropriating any third-party intellectual property right.
-                            </p>
-                            <p>
-                                Interfere with security-related features of the Service, including by disabling or
-                                circumventing
-                                features that prevent or limit use or copying of any content.
-                            </p>
-                            <p>
-                                Modify, adapt, translate, reverse engineer, decompile, or disassemble any portion of the
-                                Service.
-                            </p>
-                        </div>
+                <h2 class="text-xl font-semibold mt-6 mb-2">2. Use of Our Website</h2>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li>Mini Gamer provides free online games for entertainment purposes only.</li>
+                    <li>You may not use the site for any unlawful or prohibited purpose.</li>
+                    <li>You may not attempt to gain unauthorized access to any portion of the site.</li>
+                </ul>
 
-                        <div class="my-5 my-md-4">
-                            <h3 class="my-1 text-xl font-bold">
-                                5. Limitation of Liability
-                            </h3>
-                            <p>
-                                In no event shall web gamer, nor its directors, employees, partners, agents, suppliers,
-                                or
-                                affiliates, be liable for any indirect, incidental, special, consequential, or punitive
-                                damages,
-                                including without limitation, loss of profits, data, use, goodwill, or other intangible
-                                losses,
-                                resulting from:
-                            </p>
-                            <p>
-                                your access to or use of or inability to access or use the Service.
-                            </p>
-                            <p>
-                                any conduct or content of any third party on the Service.
-                            </p>
-                            <p>
-                                any content obtained from the Service.
-                            </p>
-                        </div>
+                <h2 class="text-xl font-semibold mt-6 mb-2">3. Intellectual Property</h2>
+                <p class="mb-4">
+                    All content, including games, logos, graphics, and text, is the property of Mini Gamer or its
+                    licensors and is protected by copyright and trademark laws.
+                    You may not reproduce, distribute, or modify any content without written permission.
+                </p>
 
-                        <div class="my-5 my-md-4">
-                            <h3 class="my-1 text-xl font-bold">
-                                6. Governing Law
-                            </h3>
-                            <p>
-                                These Terms shall be governed and construed in accordance with the laws of India,
-                                without
-                                regard
-                                to its conflict of law provisions.
-                            </p>
-                        </div>
+                <h2 class="text-xl font-semibold mt-6 mb-2">4. User Conduct</h2>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li>You agree not to misuse the site or interfere with others' enjoyment of it.</li>
+                    <li>Harassment, spamming, or offensive content will result in a ban.</li>
+                    <li>We reserve the right to block users who violate our policies.</li>
+                </ul>
 
-                        <div class="my-5 my-md-4">
-                            <h3 class="my-1 text-xl font-bold">
-                                7. Changes to Terms
-                            </h3>
-                            <p>
-                                Web gamer reserves the right, at its sole discretion, to modify or replace these Terms
-                                at
-                                any
-                                time. If a revision is material, we will provide at least 30 days' notice prior to any
-                                new
-                                terms
-                                taking effect. What constitutes a material change will be determined at our sole
-                                discretion.
-                            </p>
-                        </div>
+                <h2 class="text-xl font-semibold mt-6 mb-2">5. Third-Party Links</h2>
+                <p class="mb-4">
+                    Our site may contain links to third-party websites or services that are not owned or controlled by
+                    Mini Gamer.
+                    We are not responsible for the content, privacy policies, or practices of any third-party websites.
+                </p>
 
-                        <div class="my-5 my-md-4">
-                            <h3 class="my-1 text-xl font-bold">
-                                8. Changes to Terms
-                            </h3>
-                            <p>
-                                If you have any questions or concerns regarding these Terms and Conditions, please
-                                contact
-                                us at
-                                <span class="text-primary">
-                                    gaminggalaxys.tech@gmail.com
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                <h2 class="text-xl font-semibold mt-6 mb-2">6. Disclaimer of Warranties</h2>
+                <p class="mb-4">
+                    All games and services on Mini Gamer are provided "as is" without warranties of any kind.
+                    We do not guarantee that the website will always be available, error-free, or secure.
+                </p>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">7. Limitation of Liability</h2>
+                <p class="mb-4">
+                    Mini Gamer shall not be liable for any indirect, incidental, special, or consequential damages
+                    resulting from the use of the site.
+                    This includes loss of data, profits, or other intangible losses.
+                </p>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">8. Changes to Terms</h2>
+                <p class="mb-4">
+                    We reserve the right to update or change these Terms of Use at any time.
+                    Continued use of the site after changes means you accept the new terms.
+                </p>
+
+                <h2 class="text-xl font-semibold mt-6 mb-2">9. Contact Information</h2>
+                <p class="mb-4">
+                    If you have any questions about these Terms, please contact us via our
+                    <a href="/contact-us" class="text-blue-200 hover:underline">Contact</a> page.
+                </p>
+
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-10">Last Updated: July 10, 2025</p>
             </div>
-            <%- include("./partial/footer") %>
+        </main>
+        <%- include("./partial/footer") %>
 </body>
 
 </html>

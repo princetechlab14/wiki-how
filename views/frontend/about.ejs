@@ -5,66 +5,33 @@
     <%- include("./partial/head") %>
 </head>
 
-<body>
-    <%- include("./partial/navbar") %>
-        <%- include("./ads/1") %>
-            <div class="flex-grow xl:container mx-auto mb-12">
-                <section class="p-3 sm:p-5 md:p-8 min-h-screen">
-                    <h1 class="text-2xl text-bold font-medium my-4 capitalize">About</h1>
+<body class="bg-gray-100 cursor-default">
+    <%- include("./partial/sidebar",{sidebarCategories:sidebarCategories}) %>
 
-                    <div class="border shadow-xl p-3 rounded-lg">
-                        <p class="my-2">Welcome to web gamer, your ultimate destination for all things gaming!</p>
-                        <p class="my-2">At web gamer, we are passionate about gaming and dedicated to providing gamers
-                            of
-                            all levels with a platform to explore, connect, and thrive in the gaming universe. Whether
-                            you're a casual player, a competitive gamer, or a seasoned pro, web gamer is your virtual
-                            home
-                            where you can immerse yourself in the exciting world of gaming. </p>
-                        <p class="my-2">
-                            Our mission is to create a vibrant and inclusive gaming community where players from all
-                            walks
-                            of life can come together to share their passion, discover new games, and forge lasting
-                            friendships. With a diverse range of gaming content and resources, we strive to cater to the
-                            interests and preferences of every gamer, ensuring that there's something for everyone at
-                            web
-                            gamer.
-                        </p>
-
-                        <p class="my-2">What sets us apart is our commitment to excellence and innovation. We are
-                            constantly
-                            exploring
-                            new technologies, trends, and developments in the gaming industry to bring you the latest
-                            news,
-                            reviews, and insights. Our team of experienced gamers and industry experts works tirelessly
-                            to
-                            curate engaging and informative content that informs, entertains, and inspires our
-                            community.
-                        </p>
-
-                        <p class="my-2">At web gamer, we believe that gaming is more than just a hobby – it's a
-                            lifestyle.
-                            It's about pushing boundaries, embracing challenges, and unlocking new levels of creativity
-                            and
-                            skill. Whether you're embarking on epic quests, battling against formidable foes, or
-                            exploring
-                            vast virtual worlds, web gamer is your trusted companion on your gaming journey. </p>
-
-                        <p class="my-2">Join us as we embark on this thrilling adventure through the cosmos of gaming.
-                            Together, let's
-                            explore the infinite possibilities, forge unforgettable memories, and make our mark in the
-                            ever-expanding universe of Web-Gamer. The journey awaits – are you ready to blast off into
-                            the stars of gaming greatness?. </p>
-
-                        <p class="my-2">For any inquiries, feel free to contact us at </p>
-                        <p class="my-2"><b>Mobile No : </b>+91 70696 98484</p>
-                        <p class="my-2"><b>Address : </b> 577, Gadhpur township, kathodara to pasodara road, kamrej,
-                            surat
-                            394326 Gujarat, India.</p>
-                        <p class="my-1">Welcome aboard,<br>The web gamer Team.</p>
-                    </div>
-                </section>
+        <section class="bg-sky-700 text-white py-10 px-4 md:px-10 rounded-lg shadow-md min-h-screen">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">🎮 Welcome to Mini-Gamer!</h2>
+                <p class="text-lg leading-relaxed">
+                    Mini-Gamer is your go-to hub for <span class="text-yellow-300 font-semibold">free online
+                        games</span>. From
+                    thrilling <span class="text-pink-300">action</span> and <span class="text-pink-300">arcade</span>
+                    games to brain-teasing
+                    <span class="text-pink-300">puzzles</span> and fast-paced <span class="text-pink-300">racing</span>,
+                    we have something for everyone.
+                    Play instantly—no downloads, no registration, just pure gaming fun!
+                </p>
+                <div class="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-4 text-sm">
+                    <span class="bg-sky-600 px-3 py-2 rounded-full">🕹 100% Free to Play</span>
+                    <span class="bg-sky-600 px-3 py-2 rounded-full">📱 Mobile-Friendly</span>
+                    <span class="bg-sky-600 px-3 py-2 rounded-full">🚀 Fast Loading</span>
+                    <span class="bg-sky-600 px-3 py-2 rounded-full">🎯 No Signup Needed</span>
+                </div>
+                <p class="mt-6 text-base text-gray-200">
+                    Start playing now and explore a world of endless entertainment. New games added regularly!
+                </p>
             </div>
-            <%- include("./partial/footer") %>
+        </section>
+        <%- include("./partial/footer") %>
 </body>
 
 </html>
