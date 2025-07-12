@@ -17,18 +17,26 @@
 <!-- google adsense end -->
 
 <script>
-    const openBtn = document.getElementById('openSidebarBtn');
-    const closeBtn = document.getElementById('closeSidebarBtn');
-    const sidebar = document.getElementById('leftSidebar');
+    document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('openSidebarBtn');
+        const closeBtn = document.getElementById('closeSidebarBtn');
+        const sidebar = document.getElementById('leftSidebar');
 
-    openBtn.addEventListener('click', () => {
-        sidebar.classList.remove('-translate-x-full');
-        openBtn.classList.add('hidden');
-    });
+        if (openBtn && closeBtn && sidebar) {
+            openBtn.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+                openBtn.classList.add('hidden');
+            });
 
-    closeBtn.addEventListener('click', () => {
-        sidebar.classList.add('-translate-x-full');
-        openBtn.classList.remove('hidden');
+            closeBtn.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+                openBtn.classList.remove('hidden');
+            });
+        }
+
+        const yearElement = document.getElementById('currentYear');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
     });
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
 </script>
