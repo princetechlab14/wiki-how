@@ -106,80 +106,81 @@
                             </div>
                         </div>
             </div>
+        </div>
 
-            <%- include('./partial/footer') %>
-                <script>
-                    // toggle  full screen start
-                    var iframe = document.getElementById("gameiframe");
-                    var fullScreenButton = document.getElementById("fullScreenButton");
+        <%- include('./partial/footer') %>
+            <script>
+                // toggle  full screen start
+                var iframe = document.getElementById("gameiframe");
+                var fullScreenButton = document.getElementById("fullScreenButton");
 
-                    function toggleFullscreen() {
-                        if (!document.fullscreenElement) {
-                            if (iframe.requestFullscreen) {
-                                iframe.requestFullscreen();
-                            } else if (iframe.webkitRequestFullscreen) {
-                                iframe.webkitRequestFullscreen();
-                            } else if (iframe.msRequestFullscreen) {
-                                iframe.msRequestFullscreen();
-                            }
-                        } else {
-                            if (document.exitFullscreen) {
-                                document.exitFullscreen();
-                            } else if (document.webkitExitFullscreen) {
-                                document.webkitExitFullscreen();
-                            } else if (document.msExitFullscreen) {
-                                document.msExitFullscreen();
-                            }
+                function toggleFullscreen() {
+                    if (!document.fullscreenElement) {
+                        if (iframe.requestFullscreen) {
+                            iframe.requestFullscreen();
+                        } else if (iframe.webkitRequestFullscreen) {
+                            iframe.webkitRequestFullscreen();
+                        } else if (iframe.msRequestFullscreen) {
+                            iframe.msRequestFullscreen();
+                        }
+                    } else {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        } else if (document.webkitExitFullscreen) {
+                            document.webkitExitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                            document.msExitFullscreen();
                         }
                     }
+                }
 
-                    fullScreenButton.addEventListener("click", toggleFullscreen);
+                fullScreenButton.addEventListener("click", toggleFullscreen);
 
-                    let page = 2;
-                    let loading = false;
-                    let hasMore = true;
-                    const slug = "<%= game.mainCategory.slug %>";
+                let page = 2;
+                let loading = false;
+                let hasMore = true;
+                const slug = "<%= game.mainCategory.slug %>";
 
-                    function loadMoreGames() {
-                        if (loading || !hasMore) return;
-                        loading = true;
-                        $("#loading").show();
+                function loadMoreGames() {
+                    if (loading || !hasMore) return;
+                    loading = true;
+                    $("#loading").show();
 
-                        $.get(`/category/${slug}/load-more?page=${page}`, function (games) {
-                            if (!games || games.length === 0) {
-                                hasMore = false; // <-- SET to false when no more data
-                                $("#loading").hide(); // or just hide it
-                                return;
-                            }
+                    $.get(`/category/${slug}/load-more?page=${page}`, function (games) {
+                        if (!games || games.length === 0) {
+                            hasMore = false; // <-- SET to false when no more data
+                            $("#loading").hide(); // or just hide it
+                            return;
+                        }
 
-                            games.forEach(game => {
-                                const gameHTML = `<a href="/game/${game.slug}"
+                        games.forEach(game => {
+                            const gameHTML = `<a href="/game/${game.slug}"
                             class="relative bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col items-center group overflow-hidden">
                             <img src="${game.logo}" alt="${game.title}" class="rounded w-full h-40 object-cover" loading="lazy" />
                             <span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm font-bold text-white opacity-0 group-hover:opacity-100 transition text-lg text-center w-full">
                                 ${game.title}
                             </span>
                         </a>`;
-                                $("#gamesGrid").append(gameHTML);
-                            });
-
-                            page++;
-                            loading = false;
-                            $("#loading").hide();
+                            $("#gamesGrid").append(gameHTML);
                         });
-                    }
 
-                    $(window).on('scroll', function () {
-                        if (!hasMore) return;
-                        const scrollTop = $(window).scrollTop();
-                        const windowHeight = $(window).height();
-                        const docHeight = $(document).height();
-
-                        if (scrollTop + windowHeight + 200 >= docHeight) {
-                            loadMoreGames();
-                        }
+                        page++;
+                        loading = false;
+                        $("#loading").hide();
                     });
-                </script>
+                }
+
+                $(window).on('scroll', function () {
+                    if (!hasMore) return;
+                    const scrollTop = $(window).scrollTop();
+                    const windowHeight = $(window).height();
+                    const docHeight = $(document).height();
+
+                    if (scrollTop + windowHeight + 200 >= docHeight) {
+                        loadMoreGames();
+                    }
+                });
+            </script>
 </body>
 
 </html>
